@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service
 @Service
 class MyService @Autowired()(serviceConfig: MyServiceConfig) {
   def getMessage: String = {
-    serviceConfig.someKey
+    s"The service says: '${serviceConfig.someKey}'"
   }
 }

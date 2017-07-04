@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.{RequestMapping, RequestMethod, R
 
 @Controller
 class MyServiceController @Autowired()(myService: MyService) {
+
   @RequestMapping(path = Array("/test"), method = Array(RequestMethod.GET), produces = Array(MediaType.TEXT_PLAIN_VALUE))
   @ResponseBody
   def handleRequest(): String = {
-    myService.getMessage
+    "Hallo from a Scala controller! " + myService.getMessage
   }
+
 }
